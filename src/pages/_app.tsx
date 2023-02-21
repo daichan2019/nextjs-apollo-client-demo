@@ -1,32 +1,9 @@
 import '../styles/index.css';
 
-import {
-  ApolloClient,
-  ApolloLink,
-  ApolloProvider,
-  concat,
-  HttpLink,
-  InMemoryCache,
-} from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import type { AppProps } from 'next/app';
 
-import { GITHUB_TOKEN } from '@/config/index';
-
-const httpLink = new HttpLink({ uri: 'https://api.github.com/graphql' });
-
-const authMiddleware = new ApolloLink((operation, forward) => {
-  operation.setContext({
-    headers: {
-      authorization: `Bearer ${GITHUB_TOKEN}`,
-    },
-  });
-  return forward(operation);
-});
-
-const client = new ApolloClient({
-  link: concat(authMiddleware, httpLink),
-  cache: new InMemoryCache(),
-});
+import { client } from '@/lib/apollo-client';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

@@ -1,55 +1,36 @@
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import type { NextPage } from 'next';
 
-const GET_REPOSITORY = gql`
-  query {
-    viewer {
-      repositories(
-        first: 3
-        privacy: PUBLIC
-        isFork: false
-        orderBy: { field: CREATED_AT, direction: DESC }
-      ) {
-        nodes {
-          name
-          url
-          description
-        }
-      }
+import { graphql } from '@/graphql/gql';
+
+const allFilmsWithVariablesQueryDocument = graphql(/* GraphQL */ `
+  query GetUsers {
+    users(order_by: { created_at: desc }) {
+      id
+      name
+      created_at
     }
   }
-`;
-
-type Repository = {
-  name: string;
-  url: string;
-  description: string;
-};
+`);
 
 const Home: NextPage = () => {
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  const { data, error, loading } = useQuery(GET_REPOSITORY);
+  const { data, error, loading } = useQuery(allFilmsWithVariablesQueryDocument);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <div>loading...</div>;
   }
   if (error) {
-    return <p>Error : {error.message}</p>;
+    return <div>error {error.message}</div>;
   }
 
-  return (
-    <div>
-      {data.viewer.repositories.nodes.map((repository: Repository) => {
-        return (
-          <div key={repository.name}>
-            <b>Repository: {repository.name}</b>
-            <p>URL: {repository.url}</p>
-            <p>Description: {repository.description || '-'}</p>
-          </div>
-        );
+  if (data) {
+    <ul>
+      {data.users.map((user) => {
+        return <li key={user.id}>{user.name}</li>;
       })}
-    </div>
-  );
+    </ul>;
+  }
 };
 
 export default Home;
