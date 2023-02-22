@@ -67,7 +67,7 @@ export enum Cursor_Ordering {
   /** ascending ordering of the cursor */
   Asc = 'ASC',
   /** descending ordering of the cursor */
-  Desc = 'DESC',
+  Desc = 'DESC'
 }
 
 /** columns and relationships of "groups" */
@@ -81,6 +81,7 @@ export type Groups = {
   users_aggregate: Users_Aggregate;
 };
 
+
 /** columns and relationships of "groups" */
 export type GroupsUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
@@ -89,6 +90,7 @@ export type GroupsUsersArgs = {
   order_by?: InputMaybe<Array<Users_Order_By>>;
   where?: InputMaybe<Users_Bool_Exp>;
 };
+
 
 /** columns and relationships of "groups" */
 export type GroupsUsers_AggregateArgs = {
@@ -114,6 +116,7 @@ export type Groups_Aggregate_Fields = {
   min?: Maybe<Groups_Min_Fields>;
 };
 
+
 /** aggregate fields of "groups" */
 export type Groups_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Groups_Select_Column>>;
@@ -134,7 +137,7 @@ export type Groups_Bool_Exp = {
 /** unique or primary key constraints on table "groups" */
 export enum Groups_Constraint {
   /** unique or primary key constraint on columns "id" */
-  GroupsPkey = 'groups_pkey',
+  GroupsPkey = 'groups_pkey'
 }
 
 /** input type for inserting data into table "groups" */
@@ -198,7 +201,7 @@ export enum Groups_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Name = 'name',
+  Name = 'name'
 }
 
 /** input type for updating data in table "groups" */
@@ -226,7 +229,7 @@ export enum Groups_Update_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Name = 'name',
+  Name = 'name'
 }
 
 export type Groups_Updates = {
@@ -297,45 +300,54 @@ export type Mutation_Root = {
   update_users_many?: Maybe<Array<Maybe<Users_Mutation_Response>>>;
 };
 
+
 /** mutation root */
 export type Mutation_RootDelete_GroupsArgs = {
   where: Groups_Bool_Exp;
 };
+
 
 /** mutation root */
 export type Mutation_RootDelete_Groups_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
+
 /** mutation root */
 export type Mutation_RootDelete_Profile_UsersArgs = {
   where: Profile_Users_Bool_Exp;
 };
+
 
 /** mutation root */
 export type Mutation_RootDelete_Profile_Users_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
+
 /** mutation root */
 export type Mutation_RootDelete_ProfilesArgs = {
   where: Profiles_Bool_Exp;
 };
+
 
 /** mutation root */
 export type Mutation_RootDelete_Profiles_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
+
 /** mutation root */
 export type Mutation_RootDelete_UsersArgs = {
   where: Users_Bool_Exp;
 };
 
+
 /** mutation root */
 export type Mutation_RootDelete_Users_By_PkArgs = {
   id: Scalars['uuid'];
 };
+
 
 /** mutation root */
 export type Mutation_RootInsert_GroupsArgs = {
@@ -343,11 +355,13 @@ export type Mutation_RootInsert_GroupsArgs = {
   on_conflict?: InputMaybe<Groups_On_Conflict>;
 };
 
+
 /** mutation root */
 export type Mutation_RootInsert_Groups_OneArgs = {
   object: Groups_Insert_Input;
   on_conflict?: InputMaybe<Groups_On_Conflict>;
 };
+
 
 /** mutation root */
 export type Mutation_RootInsert_Profile_UsersArgs = {
@@ -355,11 +369,13 @@ export type Mutation_RootInsert_Profile_UsersArgs = {
   on_conflict?: InputMaybe<Profile_Users_On_Conflict>;
 };
 
+
 /** mutation root */
 export type Mutation_RootInsert_Profile_Users_OneArgs = {
   object: Profile_Users_Insert_Input;
   on_conflict?: InputMaybe<Profile_Users_On_Conflict>;
 };
+
 
 /** mutation root */
 export type Mutation_RootInsert_ProfilesArgs = {
@@ -367,11 +383,13 @@ export type Mutation_RootInsert_ProfilesArgs = {
   on_conflict?: InputMaybe<Profiles_On_Conflict>;
 };
 
+
 /** mutation root */
 export type Mutation_RootInsert_Profiles_OneArgs = {
   object: Profiles_Insert_Input;
   on_conflict?: InputMaybe<Profiles_On_Conflict>;
 };
+
 
 /** mutation root */
 export type Mutation_RootInsert_UsersArgs = {
@@ -379,11 +397,13 @@ export type Mutation_RootInsert_UsersArgs = {
   on_conflict?: InputMaybe<Users_On_Conflict>;
 };
 
+
 /** mutation root */
 export type Mutation_RootInsert_Users_OneArgs = {
   object: Users_Insert_Input;
   on_conflict?: InputMaybe<Users_On_Conflict>;
 };
+
 
 /** mutation root */
 export type Mutation_RootUpdate_GroupsArgs = {
@@ -391,16 +411,19 @@ export type Mutation_RootUpdate_GroupsArgs = {
   where: Groups_Bool_Exp;
 };
 
+
 /** mutation root */
 export type Mutation_RootUpdate_Groups_By_PkArgs = {
   _set?: InputMaybe<Groups_Set_Input>;
   pk_columns: Groups_Pk_Columns_Input;
 };
 
+
 /** mutation root */
 export type Mutation_RootUpdate_Groups_ManyArgs = {
   updates: Array<Groups_Updates>;
 };
+
 
 /** mutation root */
 export type Mutation_RootUpdate_Profile_UsersArgs = {
@@ -408,16 +431,19 @@ export type Mutation_RootUpdate_Profile_UsersArgs = {
   where: Profile_Users_Bool_Exp;
 };
 
+
 /** mutation root */
 export type Mutation_RootUpdate_Profile_Users_By_PkArgs = {
   _set?: InputMaybe<Profile_Users_Set_Input>;
   pk_columns: Profile_Users_Pk_Columns_Input;
 };
 
+
 /** mutation root */
 export type Mutation_RootUpdate_Profile_Users_ManyArgs = {
   updates: Array<Profile_Users_Updates>;
 };
+
 
 /** mutation root */
 export type Mutation_RootUpdate_ProfilesArgs = {
@@ -425,16 +451,19 @@ export type Mutation_RootUpdate_ProfilesArgs = {
   where: Profiles_Bool_Exp;
 };
 
+
 /** mutation root */
 export type Mutation_RootUpdate_Profiles_By_PkArgs = {
   _set?: InputMaybe<Profiles_Set_Input>;
   pk_columns: Profiles_Pk_Columns_Input;
 };
 
+
 /** mutation root */
 export type Mutation_RootUpdate_Profiles_ManyArgs = {
   updates: Array<Profiles_Updates>;
 };
+
 
 /** mutation root */
 export type Mutation_RootUpdate_UsersArgs = {
@@ -442,11 +471,13 @@ export type Mutation_RootUpdate_UsersArgs = {
   where: Users_Bool_Exp;
 };
 
+
 /** mutation root */
 export type Mutation_RootUpdate_Users_By_PkArgs = {
   _set?: InputMaybe<Users_Set_Input>;
   pk_columns: Users_Pk_Columns_Input;
 };
+
 
 /** mutation root */
 export type Mutation_RootUpdate_Users_ManyArgs = {
@@ -466,7 +497,7 @@ export enum Order_By {
   /** in descending order, nulls first */
   DescNullsFirst = 'desc_nulls_first',
   /** in descending order, nulls last */
-  DescNullsLast = 'desc_nulls_last',
+  DescNullsLast = 'desc_nulls_last'
 }
 
 /** columns and relationships of "profile_users" */
@@ -507,6 +538,7 @@ export type Profile_Users_Aggregate_Fields = {
   min?: Maybe<Profile_Users_Min_Fields>;
 };
 
+
 /** aggregate fields of "profile_users" */
 export type Profile_Users_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -542,7 +574,7 @@ export type Profile_Users_Bool_Exp = {
 /** unique or primary key constraints on table "profile_users" */
 export enum Profile_Users_Constraint {
   /** unique or primary key constraint on columns "id" */
-  ProfileUsersPkey = 'profile_users_pkey',
+  ProfileUsersPkey = 'profile_users_pkey'
 }
 
 /** input type for inserting data into table "profile_users" */
@@ -621,7 +653,7 @@ export enum Profile_Users_Select_Column {
   /** column name */
   ProfileId = 'profile_id',
   /** column name */
-  UserId = 'user_id',
+  UserId = 'user_id'
 }
 
 /** input type for updating data in table "profile_users" */
@@ -653,7 +685,7 @@ export enum Profile_Users_Update_Column {
   /** column name */
   ProfileId = 'profile_id',
   /** column name */
-  UserId = 'user_id',
+  UserId = 'user_id'
 }
 
 export type Profile_Users_Updates = {
@@ -676,6 +708,7 @@ export type Profiles = {
   user?: Maybe<Users>;
 };
 
+
 /** columns and relationships of "profiles" */
 export type ProfilesProfile_UsersArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -684,6 +717,7 @@ export type ProfilesProfile_UsersArgs = {
   order_by?: InputMaybe<Array<Profile_Users_Order_By>>;
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
+
 
 /** columns and relationships of "profiles" */
 export type ProfilesProfile_Users_AggregateArgs = {
@@ -709,6 +743,7 @@ export type Profiles_Aggregate_Fields = {
   min?: Maybe<Profiles_Min_Fields>;
 };
 
+
 /** aggregate fields of "profiles" */
 export type Profiles_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Profiles_Select_Column>>;
@@ -730,7 +765,7 @@ export type Profiles_Bool_Exp = {
 /** unique or primary key constraints on table "profiles" */
 export enum Profiles_Constraint {
   /** unique or primary key constraint on columns "id" */
-  ProfilesPkey = 'profiles_pkey',
+  ProfilesPkey = 'profiles_pkey'
 }
 
 /** input type for inserting data into table "profiles" */
@@ -796,7 +831,7 @@ export enum Profiles_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Nickname = 'nickname',
+  Nickname = 'nickname'
 }
 
 /** input type for updating data in table "profiles" */
@@ -824,7 +859,7 @@ export enum Profiles_Update_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Nickname = 'nickname',
+  Nickname = 'nickname'
 }
 
 export type Profiles_Updates = {
@@ -862,6 +897,7 @@ export type Query_Root = {
   users_by_pk?: Maybe<Users>;
 };
 
+
 export type Query_RootGroupsArgs = {
   distinct_on?: InputMaybe<Array<Groups_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -869,6 +905,7 @@ export type Query_RootGroupsArgs = {
   order_by?: InputMaybe<Array<Groups_Order_By>>;
   where?: InputMaybe<Groups_Bool_Exp>;
 };
+
 
 export type Query_RootGroups_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Groups_Select_Column>>;
@@ -878,9 +915,11 @@ export type Query_RootGroups_AggregateArgs = {
   where?: InputMaybe<Groups_Bool_Exp>;
 };
 
+
 export type Query_RootGroups_By_PkArgs = {
   id: Scalars['uuid'];
 };
+
 
 export type Query_RootProfile_UsersArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -890,6 +929,7 @@ export type Query_RootProfile_UsersArgs = {
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
+
 export type Query_RootProfile_Users_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -898,9 +938,11 @@ export type Query_RootProfile_Users_AggregateArgs = {
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
+
 export type Query_RootProfile_Users_By_PkArgs = {
   id: Scalars['uuid'];
 };
+
 
 export type Query_RootProfilesArgs = {
   distinct_on?: InputMaybe<Array<Profiles_Select_Column>>;
@@ -910,6 +952,7 @@ export type Query_RootProfilesArgs = {
   where?: InputMaybe<Profiles_Bool_Exp>;
 };
 
+
 export type Query_RootProfiles_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Profiles_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -918,9 +961,11 @@ export type Query_RootProfiles_AggregateArgs = {
   where?: InputMaybe<Profiles_Bool_Exp>;
 };
 
+
 export type Query_RootProfiles_By_PkArgs = {
   id: Scalars['uuid'];
 };
+
 
 export type Query_RootUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
@@ -930,6 +975,7 @@ export type Query_RootUsersArgs = {
   where?: InputMaybe<Users_Bool_Exp>;
 };
 
+
 export type Query_RootUsers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -937,6 +983,7 @@ export type Query_RootUsers_AggregateArgs = {
   order_by?: InputMaybe<Array<Users_Order_By>>;
   where?: InputMaybe<Users_Bool_Exp>;
 };
+
 
 export type Query_RootUsers_By_PkArgs = {
   id: Scalars['uuid'];
@@ -978,6 +1025,7 @@ export type Subscription_Root = {
   users_stream: Array<Users>;
 };
 
+
 export type Subscription_RootGroupsArgs = {
   distinct_on?: InputMaybe<Array<Groups_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -985,6 +1033,7 @@ export type Subscription_RootGroupsArgs = {
   order_by?: InputMaybe<Array<Groups_Order_By>>;
   where?: InputMaybe<Groups_Bool_Exp>;
 };
+
 
 export type Subscription_RootGroups_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Groups_Select_Column>>;
@@ -994,15 +1043,18 @@ export type Subscription_RootGroups_AggregateArgs = {
   where?: InputMaybe<Groups_Bool_Exp>;
 };
 
+
 export type Subscription_RootGroups_By_PkArgs = {
   id: Scalars['uuid'];
 };
+
 
 export type Subscription_RootGroups_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Groups_Stream_Cursor_Input>>;
   where?: InputMaybe<Groups_Bool_Exp>;
 };
+
 
 export type Subscription_RootProfile_UsersArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -1012,6 +1064,7 @@ export type Subscription_RootProfile_UsersArgs = {
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
+
 export type Subscription_RootProfile_Users_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1020,15 +1073,18 @@ export type Subscription_RootProfile_Users_AggregateArgs = {
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
+
 export type Subscription_RootProfile_Users_By_PkArgs = {
   id: Scalars['uuid'];
 };
+
 
 export type Subscription_RootProfile_Users_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Profile_Users_Stream_Cursor_Input>>;
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
+
 
 export type Subscription_RootProfilesArgs = {
   distinct_on?: InputMaybe<Array<Profiles_Select_Column>>;
@@ -1038,6 +1094,7 @@ export type Subscription_RootProfilesArgs = {
   where?: InputMaybe<Profiles_Bool_Exp>;
 };
 
+
 export type Subscription_RootProfiles_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Profiles_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1046,15 +1103,18 @@ export type Subscription_RootProfiles_AggregateArgs = {
   where?: InputMaybe<Profiles_Bool_Exp>;
 };
 
+
 export type Subscription_RootProfiles_By_PkArgs = {
   id: Scalars['uuid'];
 };
+
 
 export type Subscription_RootProfiles_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Profiles_Stream_Cursor_Input>>;
   where?: InputMaybe<Profiles_Bool_Exp>;
 };
+
 
 export type Subscription_RootUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
@@ -1064,6 +1124,7 @@ export type Subscription_RootUsersArgs = {
   where?: InputMaybe<Users_Bool_Exp>;
 };
 
+
 export type Subscription_RootUsers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1072,9 +1133,11 @@ export type Subscription_RootUsers_AggregateArgs = {
   where?: InputMaybe<Users_Bool_Exp>;
 };
 
+
 export type Subscription_RootUsers_By_PkArgs = {
   id: Scalars['uuid'];
 };
+
 
 export type Subscription_RootUsers_StreamArgs = {
   batch_size: Scalars['Int'];
@@ -1113,6 +1176,7 @@ export type Users = {
   profile_users_aggregate: Profile_Users_Aggregate;
 };
 
+
 /** columns and relationships of "users" */
 export type UsersProfile_UsersArgs = {
   distinct_on?: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -1121,6 +1185,7 @@ export type UsersProfile_UsersArgs = {
   order_by?: InputMaybe<Array<Profile_Users_Order_By>>;
   where?: InputMaybe<Profile_Users_Bool_Exp>;
 };
+
 
 /** columns and relationships of "users" */
 export type UsersProfile_Users_AggregateArgs = {
@@ -1156,6 +1221,7 @@ export type Users_Aggregate_Fields = {
   max?: Maybe<Users_Max_Fields>;
   min?: Maybe<Users_Min_Fields>;
 };
+
 
 /** aggregate fields of "users" */
 export type Users_Aggregate_FieldsCountArgs = {
@@ -1198,7 +1264,7 @@ export enum Users_Constraint {
   /** unique or primary key constraint on columns "id" */
   UsersPkey = 'users_pkey',
   /** unique or primary key constraint on columns "profile_id" */
-  UsersProfileIdKey = 'users_profile_id_key',
+  UsersProfileIdKey = 'users_profile_id_key'
 }
 
 /** input type for inserting data into table "users" */
@@ -1302,7 +1368,7 @@ export enum Users_Select_Column {
   /** column name */
   Name = 'name',
   /** column name */
-  ProfileId = 'profile_id',
+  ProfileId = 'profile_id'
 }
 
 /** input type for updating data in table "users" */
@@ -1342,7 +1408,7 @@ export enum Users_Update_Column {
   /** column name */
   Name = 'name',
   /** column name */
-  ProfileId = 'profile_id',
+  ProfileId = 'profile_id'
 }
 
 export type Users_Updates = {
@@ -1365,53 +1431,10 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 };
 
-export type GetUsersQueryVariables = Exact<{ [key: string]: never }>;
+export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type GetUsersQuery = {
-  __typename?: 'query_root';
-  users: Array<{ __typename?: 'users'; id: any; name: string; created_at: any }>;
-};
 
-export const GetUsersDocument = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'GetUsers' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'users' },
-            arguments: [
-              {
-                kind: 'Argument',
-                name: { kind: 'Name', value: 'order_by' },
-                value: {
-                  kind: 'ObjectValue',
-                  fields: [
-                    {
-                      kind: 'ObjectField',
-                      name: { kind: 'Name', value: 'created_at' },
-                      value: { kind: 'EnumValue', value: 'desc' },
-                    },
-                  ],
-                },
-              },
-            ],
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'created_at' } },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<GetUsersQuery, GetUsersQueryVariables>;
+export type GetUsersQuery = { __typename?: 'query_root', users: Array<{ __typename?: 'users', id: any, name: string, created_at: any }> };
+
+
+export const GetUsersDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetUsers"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"users"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"order_by"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"created_at"},"value":{"kind":"EnumValue","value":"desc"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"created_at"}}]}}]}}]} as unknown as DocumentNode<GetUsersQuery, GetUsersQueryVariables>;

@@ -1,21 +1,10 @@
-import { useQuery } from '@apollo/client';
 import type { NextPage } from 'next';
-
-import { graphql } from '@/graphql/gql';
-
-const allFilmsWithVariablesQueryDocument = graphql(/* GraphQL */ `
-  query GetUsers {
-    users(order_by: { created_at: desc }) {
-      id
-      name
-      created_at
-    }
-  }
-`);
+import { UserList } from 'src/features/user/components/user-list';
+import { useFetchUsers } from 'src/features/user/hooks/use-fetch-users';
 
 const Home: NextPage = () => {
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  const { data, error, loading } = useQuery(allFilmsWithVariablesQueryDocument);
+  const { data, error, loading } = useFetchUsers();
 
   if (loading) {
     return <div>loading...</div>;
@@ -23,13 +12,8 @@ const Home: NextPage = () => {
   if (error) {
     return <div>error {error.message}</div>;
   }
-
   if (data) {
-    <ul>
-      {data.users.map((user) => {
-        return <li key={user.id}>{user.name}</li>;
-      })}
-    </ul>;
+    return <UserList users={data?.users} />;
   }
 };
 
