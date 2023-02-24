@@ -10,7 +10,6 @@ export type InputProps = {
 export const Input = ({
   error,
   inputRef,
-  isSubmitting,
   name,
   onChange,
   placeholder,
@@ -27,11 +26,6 @@ export const Input = ({
 
   return (
     <>
-      {isSubmitting && (
-        <div className='absolute'>
-          <div className='relative top-8 left-2'>...submitting</div>
-        </div>
-      )}
       <input
         onChange={onChange}
         name={name}

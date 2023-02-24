@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "codegen": "graphql-codegen --watch",
+    "dev": "run-p dev:*",
+    "dev:next": "next dev",
+    "dev:codegen": "graphql-codegen --watch",
     "clean": "rimraf .next out",
     "build": "next build",
     "export": "next export",

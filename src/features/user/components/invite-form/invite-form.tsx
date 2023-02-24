@@ -1,9 +1,12 @@
+import { useMutation } from '@apollo/client';
 import type { FC } from 'react';
+import { useCreateUser } from 'src/features/user/hooks/use-create-user';
 import { z } from 'zod';
 
 import { Button } from '@/components/button';
 import { Form } from '@/components/form';
 import { InputControl } from '@/components/input-control';
+import { createUserDocument } from '@/graphql/queries/queries';
 
 type FormValue = {
   name: string;
@@ -17,11 +20,13 @@ const validationSchema = z.object({
 });
 
 export const InviteForm: FC = () => {
+  const [createUser, { data: res, error, loading }] = useMutation(createUserDocument);
+
   return (
     <Form<FormValue, typeof validationSchema>
       id='invite-form'
       onSubmit={async (data) => {
-        console.log(data);
+        await createUser({ variables: { name: data.name } });
       }}
       options={{
         reValidateMode: 'onChange',
@@ -38,7 +43,7 @@ export const InviteForm: FC = () => {
               <InputControl name='name' control={control} />
             </div>
             <div className='mt-10 flex justify-center'>
-              <Button>送信する</Button>
+              <Button type='submit'>送信する</Button>
             </div>
           </>
         );
