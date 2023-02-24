@@ -20,7 +20,7 @@ const validationSchema = z.object({
 });
 
 export const InviteForm: FC = () => {
-  const [createUser, { data: res, error, loading }] = useMutation(createUserDocument);
+  const [createUser] = useMutation(createUserDocument);
 
   return (
     <Form<FormValue, typeof validationSchema>
@@ -35,16 +35,13 @@ export const InviteForm: FC = () => {
         },
       }}
       schema={validationSchema}
+      className='flex gap-3'
     >
       {({ control }) => {
         return (
           <>
-            <div className='rounded-lg bg-white p-10'>
-              <InputControl name='name' control={control} />
-            </div>
-            <div className='mt-10 flex justify-center'>
-              <Button type='submit'>送信する</Button>
-            </div>
+            <InputControl name='name' control={control} />
+            <Button type='submit'>追加する</Button>
           </>
         );
       }}
