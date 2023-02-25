@@ -1,4 +1,3 @@
-import { useMutation } from '@apollo/client';
 import type { FC } from 'react';
 import { useCreateUser } from 'src/features/user/hooks/use-create-user';
 import { z } from 'zod';
@@ -6,7 +5,6 @@ import { z } from 'zod';
 import { Button } from '@/components/button';
 import { Form } from '@/components/form';
 import { InputControl } from '@/components/input-control';
-import { createUserDocument } from '@/graphql/queries/queries';
 import { cn } from '@/utils/cn';
 
 type FormValue = {
