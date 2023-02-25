@@ -7,6 +7,7 @@ import { Button } from '@/components/button';
 import { Form } from '@/components/form';
 import { InputControl } from '@/components/input-control';
 import { createUserDocument } from '@/graphql/queries/queries';
+import { cn } from '@/utils/cn';
 
 type FormValue = {
   name: string;
@@ -20,13 +21,13 @@ const validationSchema = z.object({
 });
 
 export const InviteForm: FC = () => {
-  const [createUser] = useMutation(createUserDocument);
+  const [createUser] = useCreateUser();
 
   return (
     <Form<FormValue, typeof validationSchema>
       id='invite-form'
-      onSubmit={async (data) => {
-        await createUser({ variables: { name: data.name } });
+      onSubmit={(data) => {
+        createUser({ variables: { name: data.name } });
       }}
       options={{
         reValidateMode: 'onChange',
@@ -35,12 +36,14 @@ export const InviteForm: FC = () => {
         },
       }}
       schema={validationSchema}
-      className='flex gap-3'
+      className={cn('flex gap-2')}
     >
       {({ control }) => {
         return (
           <>
-            <InputControl name='name' control={control} />
+            <div className='flex-1'>
+              <InputControl name='name' control={control} />
+            </div>
             <Button type='submit'>追加する</Button>
           </>
         );
