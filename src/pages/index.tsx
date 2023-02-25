@@ -28,7 +28,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <InviteForm />
-      <UserList users={data?.users} />
+      <UserList users={data?.users ?? []} />
     </Layout>
   );
 };
