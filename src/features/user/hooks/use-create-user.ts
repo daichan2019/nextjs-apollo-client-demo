@@ -13,7 +13,7 @@ export const useCreateUser = () => {
         cache.writeQuery({
           query: getUsersDocument,
           data: {
-            users: [...existingUsers.users, newUserFromResponse],
+            users: [newUserFromResponse, ...existingUsers.users],
           },
         });
       }
