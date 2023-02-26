@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import type { ButtonHTMLAttributes, ReactElement } from 'react';
 import { forwardRef } from 'react';
 
 import { Spinner } from '@/components/spinner';
+import { cn } from '@/utils/cn';
 
 const variants = {
   primary: 'bg-blue-600 text-white',
@@ -30,7 +30,6 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
-      className = '',
       endIcon,
       isLoading = false,
       size = 'md',
@@ -45,11 +44,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         type={type}
-        className={clsx(
+        className={cn(
           'flex items-center justify-center rounded-md border border-gray-300 font-medium shadow-sm hover:opacity-80 focus:outline-none disabled:cursor-not-allowed disabled:opacity-70',
           variants[variant],
           sizes[size],
-          className,
         )}
         {...props}
       >
