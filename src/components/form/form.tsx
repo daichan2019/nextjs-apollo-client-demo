@@ -1,10 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import clsx from 'clsx';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 import type { FieldValues, SubmitHandler, UseFormProps, UseFormReturn } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import type { ZodType, ZodTypeDef } from 'zod';
+
+import { cn } from '@/utils/cn';
 
 type FormProps<TFormValues extends FieldValues, Schema> = {
   className?: string;
@@ -36,7 +37,7 @@ export const Form = <
   }, [methods, methods.formState.isSubmitSuccessful]);
 
   return (
-    <form className={clsx(className)} onSubmit={methods.handleSubmit(onSubmit)} id={id}>
+    <form className={cn(className)} onSubmit={methods.handleSubmit(onSubmit)} id={id}>
       {children(methods)}
     </form>
   );
