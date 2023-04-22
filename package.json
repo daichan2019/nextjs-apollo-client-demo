@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "codegen": "graphql-codegen --watch",
+    "dev": "run-p dev:*",
+    "dev:next": "next dev",
+    "dev:codegen": "graphql-codegen --watch",
     "clean": "rimraf .next out",
     "build": "next build",
     "export": "next export",
@@ -41,11 +42,16 @@
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "recoil": "0.7.6"
+    "react-hook-form": "^7.43.2",
+    "recoil": "0.7.6",
+    "tailwind-merge": "^1.10.0",
+    "zod": "^3.20.6"
   },
   "devDependencies": {
     "@graphql-codegen/client-preset": "^2.0.0",
     "@graphql-codegen/import-types-preset": "^2.2.6",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
+    "@hookform/resolvers": "^2.9.11",
     "@tailwindcss/forms": "0.5.3",
     "@tailwindcss/line-clamp": "0.4.2",
     "@tailwindcss/typography": "0.5.8",

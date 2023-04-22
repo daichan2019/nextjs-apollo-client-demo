@@ -1,20 +1,36 @@
 import type { NextPage } from 'next';
+import { InviteForm } from 'src/features/user/components/invite-form';
 import { UserList } from 'src/features/user/components/user-list';
 import { useFetchUsers } from 'src/features/user/hooks/use-fetch-users';
+
+import { Layout } from '@/components/layout';
 
 const Home: NextPage = () => {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   const { data, error, loading } = useFetchUsers();
 
   if (loading) {
-    return <div>loading...</div>;
+    return (
+      <Layout>
+        <p>loading...</p>
+      </Layout>
+    );
   }
+
   if (error) {
-    return <div>error {error.message}</div>;
+    return (
+      <Layout>
+        <p>error {error.message}</p>
+      </Layout>
+    );
   }
-  if (data) {
-    return <UserList users={data?.users} />;
-  }
+
+  return (
+    <Layout>
+      <InviteForm />
+      <UserList users={data?.users ?? []} />
+    </Layout>
+  );
 };
 
 export default Home;
